@@ -1,0 +1,106 @@
+/* Estilos adicionales para complementar Tailwind CSS */
+
+/* Animación de entrada suave para las tarjetas de películas */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.movie-card {
+  animation: fadeIn 0.5s ease forwards;
+  opacity: 0;
+}
+
+/* Retrasamos la animación para crear un efecto escalonado */
+.movie-card:nth-child(1) { animation-delay: 0.05s; }
+.movie-card:nth-child(2) { animation-delay: 0.1s; }
+.movie-card:nth-child(3) { animation-delay: 0.15s; }
+.movie-card:nth-child(4) { animation-delay: 0.2s; }
+.movie-card:nth-child(5) { animation-delay: 0.25s; }
+.movie-card:nth-child(6) { animation-delay: 0.3s; }
+.movie-card:nth-child(7) { animation-delay: 0.35s; }
+.movie-card:nth-child(8) { animation-delay: 0.4s; }
+.movie-card:nth-child(9) { animation-delay: 0.45s; }
+.movie-card:nth-child(10) { animation-delay: 0.5s; }
+.movie-card:nth-child(11) { animation-delay: 0.55s; }
+.movie-card:nth-child(12) { animation-delay: 0.6s; }
+
+/* Efecto hover para las tarjetas de películas */
+.movie-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo para la calificación de películas */
+.rating-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: bold;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo para el botón de búsqueda al hacer focus en el input */
+#searchInput:focus + #searchButton {
+  background-color: #f59e0b; /* amber-500 más intenso al focus */
+}
+
+/* Estilo para el indicador de búsqueda en tiempo real */
+@keyframes pulse {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
+}
+
+.searching-indicator {
+  animation: pulse 1.5s infinite;
+}
+
+/* Animación para los resultados de búsqueda en tiempo real */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.search-results-container {
+  animation: slideDown 0.3s ease forwards;
+}
+
+/* Animación para el modal */
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-content {
+  animation: modalFadeIn 0.3s ease forwards;
+}
+
+/* Añadir efecto al botón de cerrar */
+#closeModal {
+  transition: all 0.2s ease;
+}
+
+#closeModal:hover {
+  transform: scale(1.05);
+}
+
+/* Estilizar imágenes sin póster */
+.no-poster {
+  background: linear-gradient(45deg, #374151, #1f2937);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+  font-style: italic;
+}
